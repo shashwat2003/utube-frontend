@@ -11,7 +11,8 @@
   // Features to add to the dev container. More info: https://containers.dev/features.
   "features": {
     "ghcr.io/cirolosapio/devcontainers-features/alpine-git:0": {},
-    "ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0": {}
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-ohmyzsh:0": {},
+    "ghcr.io/cirolosapio/devcontainers-features/alpine-openssh:0": {}
   },
   // Use 'forwardPorts' to make a list of ports inside the container available locally.
   // "forwardPorts": [],
@@ -43,7 +44,7 @@
       ]
     }
   },
-  "postCreateCommand": "bun install",
+  "postAttachCommand": "git config --global --add safe.directory /workspaces/utube-frontend && bun install",
   // Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
   "remoteUser": "root",
   "appPort": ["3000:3000"]
